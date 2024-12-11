@@ -1,4 +1,4 @@
-const apiBaseUrl = "https://iyl9q5gvai.execute-api.us-east-2.amazonaws.com/dev/Default";
+const apiBaseUrl = "";
 
 async function grabData() {
   try {
