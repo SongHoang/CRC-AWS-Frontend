@@ -27,7 +27,8 @@ deploy s3:
         aud: website_s3_gj2l69ckoe
   script:
     - *assume_role
-    - aws s3 sync build/ s3://$S3_BUCKET
+    - aws configure set region us-east-2
+    - aws s3 cp index.html s3://$S3_BUCKET/
   rules:
     - if: '$CI_COMMIT_REF_NAME == "main"'
       when: always
