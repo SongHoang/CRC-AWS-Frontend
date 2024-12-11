@@ -27,9 +27,8 @@ deploy s3:
   script:
     - aws configure set region us-east-2
     - *assume_role
-    - aws s3 sync index.html s3://$S3_BUCKET/
-    - aws s3 sync error.html s3://$S3_BUCKET/
-    - aws s3 sync javascript_getapi.js s3://$S3_BUCKET/
+    - aws s3 sync ./* s3://$S3_BUCKET/
+
   rules:
     - if: '$CI_COMMIT_REF_NAME == "main"'
       when: always
