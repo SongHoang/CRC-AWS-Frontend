@@ -22,8 +22,8 @@ deploy s3:
     entrypoint: 
       - '/usr/bin/env'
   id_tokens:
-      ID_TOKEN:
-        aud: website_s3_gj2l69ckoe
+    ID_TOKEN: 
+      aud: "${ID_TOKEN}"
   script:
     - aws configure set region us-east-2
     - *assume_role
